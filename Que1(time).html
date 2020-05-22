@@ -1,0 +1,63 @@
+ <!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title> 
+        How to convert seconds to time 
+    </title> 
+    <style>
+    .button 
+    {
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    }
+    .button2 
+    {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    }
+
+    .button2:hover 
+    {
+    background-color: #008CBA;
+    color: white;
+    }
+    </style>
+</head> 
+  
+<body> 
+    <h1 style="color: #a23c4d"> 
+        Second To Hours, Minutes, Seconds Convertor
+    </h1> 
+    <p> 
+        Time:-<br>
+        <p id="output"></p> 
+    </p> 
+  
+    <button onclick="convertTime()" class="button button2"> 
+        Get time in hh:mm:ss 
+    </button> 
+      
+    <script type="text/javascript"> 
+        function convertTime() { 
+            sec = prompt("Enter seconds"); 
+  
+            hours = Math.floor(sec / 3600); 
+            minutes = Math.floor((sec/60)%60); 
+            seconds = Math.floor(sec - (hours * 3600) - (minutes * 60)); 
+            output = "Hours = "+hours+", minutes = "+minutes+", seconds = "+seconds;
+            document.getElementById("output").innerHTML = output;
+        } 
+    </script> 
+</body> 
+  
+</html> 

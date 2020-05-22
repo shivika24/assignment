@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title> 
+        XOR Of RANGE OF NUMBERS
+    </title> 
+    <style>
+    .button 
+    {
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    }
+    .button2 
+    {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    }
+
+    .button2:hover 
+    {
+    background-color: #008CBA;
+    color: white;
+    }
+    </style>
+    </style>
+</head> 
+  
+<body> 
+    <h1 style="color: #a23c4d"> 
+        XOR Of RANGE OF NUMBERS
+    </h1> 
+    <p> 
+        Output:-<br>
+        <p id="output"></p> 
+    </p> 
+  
+    <button class="button button2" onclick="check()"> 
+    CHECK
+    </button> 
+      
+    <script type="text/javascript"> 
+        function check() { 
+        	var n=prompt("Enter Size Of Array");
+        	var a=new Array(n),arr=[];
+        	for(i=0;i<n;i++)
+        	{
+                a[i]=new Array(2);
+        	}
+            for(i=0;i<n;i++)
+            {
+                for(j=0;j<2;j++)
+                {
+                a[i][j]=prompt("Enter Array Element: a["+i+"]["+j+"]");
+                }
+            }
+        	var j;
+        	for(i=0;i<n;i++)
+        	{
+        		var res=check1(a[i][1])^check1(a[i][0]-1);
+                 if(res%2==0)
+                 {
+                 	arr.push("Even");
+                 }
+                 else
+                 {
+                 	arr.push("Odd");
+                 }
+        	}           
+            document.getElementById("output").innerHTML = arr;
+        } 
+        function check1(n)
+        {
+        	switch(n%4)
+            {
+                case 0:return n;
+                case 1:return 1;
+                case 2:return n+1;
+                case 3:return 0;
+            }
+
+        }
+    </script> 
+</body> 
+  
+</html> 
